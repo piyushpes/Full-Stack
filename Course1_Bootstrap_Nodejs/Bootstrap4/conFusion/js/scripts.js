@@ -1,4 +1,15 @@
      $(document).ready(function(){
+
+            $("#reservetablebutton").click(function(){
+                $("#reserveTableModal").modal('toggle');
+            });
+
+            $("#loginModalButton").click(function(){
+                $("#loginModal").modal('toggle');
+            });
+
+
+
             $("#mycarousel").carousel({interval : 2000});
             
             $("#carousel-button").click(function(){
