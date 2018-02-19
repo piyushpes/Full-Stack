@@ -1,0 +1,36 @@
+<div class="container" fxLayout="row"
+                       fxLayout.sm="column"
+                       fxLayout.xs="column"
+                       fxLayoutGap="10px"
+                       fxLayoutAlign.gt-md="space-around start">
+
+                       <div fxFlex *ngIf="dish">
+                         <md-card>
+                           <md-card-header>
+
+                            <div md-card-avatar></div>
+                             <md-card-title>
+                                <h3>{{dish.name | uppercase}}</h3>
+                             </md-card-title>
+                             
+                            </md-card-header>
+                           <img md-card-image src="{{dish.image}}">
+                           <md-card-content>{{dish.description}}</md-card-content>
+                         </md-card>
+
+                       </div>
+                       <div fxFlex *ngIf="promotion">
+                          <md-card>
+                            <md-card-header>
+                                <div md-card-avatar></div>
+                                <md-card-title>
+                                    <h3>{{promotion.name | uppercase}}</h3>
+                                 </md-card-title>
+                            </md-card-header>
+                            <img md-card-image src="{{promotion.image}}">
+                            <md-card-content>{{promotion.description}}</md-card-content>
+                          </md-card>
+ 
+                        </div>
+
+</div>
