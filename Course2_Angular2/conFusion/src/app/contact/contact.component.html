@@ -32,6 +32,73 @@
     </div>
   </div>
 
+
+  <div fxFlex>
+  <h3>Feedback Form</h3>
+
+   <form fxLayout="column" fxLayoutGap="10px" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div fxFlex >
+        <div fxLayout.gt-sm="row" fxLayoutGap="10px" fxLayout="column">
+          <md-input-container fxFlex.gt-sm="30%" fxFlex dividerColor="{{(feedbackForm.get('firstname').hasError('required') && feedbackForm.get('firstname').touched) ? 'warn' : 'primary'}}">
+            <input mdInput placeholder="First Name" type="text" formControlName="firstname">
+            <md-hint>
+              <span [hidden]="!(feedbackForm.get('firstname').hasError('required')  && feedbackForm.get('firstname').touched)"> First Name is required</span>
+            </md-hint>
+          </md-input-container>
+          <md-input-container fxFlex.gt-sm= "30%" fxFlex dividerColor="{{(feedbackForm.get('lastname').hasError('required') && feedbackForm.get('lastname').touched) ? 'warn' : 'primary'}}">
+              <input mdInput placeholder="Last Name" type="text" formControlName="lastname">
+              <md-hint>
+                  <span [hidden]="!(feedbackForm.get('lastname').hasError('required') && feedbackForm.get('lastname').touched)"> Last Name is required</span>
+                </md-hint>
+            </md-input-container>
+        </div>
+    </div>
+
+    <div fxFlex>
+        <div fxLayout.gt-sm="row" fxLayoutGap="10px" fxLayout="column">
+            <md-input-container fxFlex.gt-sm="30%" fxFlex dividerColor="{{(feedbackForm.get('telnum').hasError('required') && feedbackForm.get('telnum').touched) ? 'warn' : 'primary'}}">
+              <input mdInput placeholder="Tel Number" type="text" formControlName="telnum">
+              <md-hint>
+                  <span [hidden]="!(feedbackForm.get('telnum').hasError('required') && feedbackForm.get('telnum').touched)"> Tel Number is required</span>
+              </md-hint>
+            </md-input-container>
+            <md-input-container fxFlex.gt-sm= "30%" fxFlex dividerColor="{{(feedbackForm.get('email').hasError('required') && feedbackForm.get('email').touched) ? 'warn' : 'primary'}}">
+                <input mdInput placeholder="Email" type="email" formControlName="email">
+                <md-hint>
+                    <span [hidden]="!(feedbackForm.get('email').hasError('required') && feedbackForm.get('email').touched)"> Email is required</span>
+                </md-hint>
+              </md-input-container>
+        </div>
+    </div>
+
+    <div fxFlex>
+        <div fxLayout="row" fxLayoutGap="10px">
+            <md-slide-toggle fxFlex.gt-sm="30%" fxFlex formControlName="agree">May we contact you?</md-slide-toggle>
+            <md-select fxFlex.gt-sm="30%" fxFlex placeholder="How do we contact?" formControlName="contacttype" *ngIf="feedbackForm.value.agree">
+              <md-option *ngFor="let opt of contactTypes" [value]="opt">{{opt}}</md-option>
+            </md-select>
+      </div>
+    </div>
+
+    <div fxFlex>
+          <div>
+            <md-input-container fxFlex>
+                <textarea mdInput placeholder="Your Message" type="text" formControlName="message" rows=12></textarea>
+            </md-input-container>
+            
+          </div>
+    </div>
+
+    <div fxFlex>
+      
+       <button type="submit" class="background-primary text-floral-white" md-button [disabled]="feedbackForm.invalid">Submit</button>  
+      
+    </div>
+
+   </form>
+
+  </div>
   
 
 </div>
