@@ -12,13 +12,13 @@ export class MenuComponent implements OnInit {
 
   dishes: Dish[];
   selectedDish: Dish;
-
   onSelect(dish:Dish){
     this.selectedDish=dish;
   }
 
   constructor(private dishService : DishService) {
-    this.dishService.getDishes().then(dishes => this.dishes=dishes);
+    this.dishService.getDishes().subscribe(dishes => this.dishes=dishes);
+    
    }
 
   ngOnInit() {
