@@ -33,7 +33,7 @@ export class DishdetailComponent implements OnInit {
     let idindex=this.dishids.indexOf(id);
     this.prev=(this.dishids.length+idindex-1)%(this.dishids.length);
     this.next=(this.dishids.length+idindex+1)%(this.dishids.length);
-    console.log(this.prev,this.next);
+    //console.log(this.prev,this.next);
   }
 
   goBack():void{
