@@ -2,7 +2,7 @@
     fxLayout="row"
     fxLayout.sm="column"
     fxLayout.xs="column"
-    fxLayoutGap="10px" 
+    fxLayoutGap="30px" 
     fxLayoutGap.xs="0">
 
   <div fxFlex="40" *ngIf="dish">
@@ -30,21 +30,65 @@
     </md-card>
   </div>
   <div [hidden]="dish">
-      <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
-   </div>
-   <div fxFlex *ngIf="dish">
-  <md-list>
-      <h3>Comments</h3>
-      <md-list-item *ngFor="let comment of dish.comments">
-        <p md-line>
-          <span> {{comment.comment}} </span>
-        </p>
-        <p md-line>{{comment.rating}} Stars</p>
-        <p md-line>-- {{comment.author}} {{comment.date | date}}</p>
-      </md-list-item>
-    </md-list>
+      <md-spinner></md-spinner
+        ><h4>Loading . . . Please Wait</h4>
   </div>
-    <div [hidden]="dish">
-        <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
-     </div>
+   <div fxFlex *ngIf="dish">
+      <div fxLayout="column" fxLayoutGap="20px">
+        <div fxFlex>
+            <md-list>
+                <h3>Comments</h3>
+                <md-list-item *ngFor="let comment of dish.comments">
+                  <p md-line>
+                    <span> {{comment.comment}} </span>
+                  </p>
+                  <p md-line>{{comment.rating}} Stars</p>
+                  <p md-line>-- {{comment.author}} {{comment.date | date}}</p>
+                </md-list-item>
+                <md-list-item *ngIf="userCommentForm.valid">
+                    <p md-line>
+                        <span> {{comment.comment}} </span>
+                      </p>
+                      <p md-line>{{comment.rating}} Stars</p>
+                      <p md-line>-- {{comment.author}} {{comment.date | date}}</p>
+                </md-list-item>
+            </md-list>
+        </div>
+
+        <div fxFlex>
+            <form novalidate [formGroup]="userCommentForm" (ngSubmit)="onSubmit()">
+              <div fxLayout="column" fxLayoutOffset="20px">
+                  <div fxFlex>
+                    <div>
+                      <md-input-container fxFlex>
+                          <input type='text' formControlName="author" placeholder="Name" mdInput>
+                          <md-hint>
+                            <span [hidden]="!(userCommentFormErrors.author)">{{userCommentFormErrors.author}}</span>
+                          </md-hint>
+                      </md-input-container>
+                    </div>
+                  </div>
+                  <div fxFlex>                      
+                      <md-slider min="1" max="5" step="1" value="5" formControlName="rating" thumbLabel tickInterval="1"></md-slider>                    
+                  </div>
+                  <div fxFlex>
+                    <div>
+                      <md-input-container fxFlex>
+                          <textarea type='text' rows=10 formControlName="comment" placeholder="Your Comment" mdInput></textarea>
+                          <md-hint>
+                              <span [hidden]="!(userCommentFormErrors.comment)">{{userCommentFormErrors.comment}}</span>
+                          </md-hint>
+                      </md-input-container>
+                    </div>
+                  </div>
+                  
+                  
+                  <div fxFlex>
+                      <button md-button type="submit" class="text-floral-white background-primary" [disabled]="userCommentForm.invalid" >Submit</button>
+                  </div>
+              </div>                
+            </form>
+          </div>
+      </div>
+    </div>
 </div>
