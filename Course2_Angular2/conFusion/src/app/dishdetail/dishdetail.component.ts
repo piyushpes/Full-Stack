@@ -19,6 +19,7 @@ export class DishdetailComponent implements OnInit {
   dish:Dish;
   dishids:number[];
   prev:number;
+  dishcopy = null;
   next:number;
   comment:Comment={rating:5,comment:'',author:'',date:''};
   dishErrMess:string;
@@ -45,7 +46,7 @@ export class DishdetailComponent implements OnInit {
                                             errmess => this.dishErrMess = <any>errmess);
     this.route.params
       .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); }
+      .subscribe(dish => { this.dish = dish;this.dishcopy = dish; this.setPrevNext(dish.id); }
                 ,errmess => this.dishErrMess = <any>errmess);
     
   }
@@ -75,7 +76,9 @@ export class DishdetailComponent implements OnInit {
 
     this.comment.date=(new Date).toISOString();
 
-    this.dish.comments.push(this.comment);
+    this.dishcopy.comments.push(this.comment);
+    this.dishcopy.save()
+      .subscribe(dish => { this.dish = dish; console.log(this.dish); });
     this.comment={rating:5,comment:'',author:'',date:''};
     this.userCommentForm.reset({
       'author':'',

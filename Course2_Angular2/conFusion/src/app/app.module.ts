@@ -7,6 +7,8 @@ import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {ProcessHttpmsgService} from './services/process-httpmsg.service';
+import { RestangularModule, Restangular } from 'ngx-restangular';
+import { RestangularConfigFactory } from './shared/restConfig';
 
 import {DishService} from './services/dish.service';
 import {PromotionService} from './services/promotion.service';
@@ -46,6 +48,7 @@ import { LoginComponent } from './login/login.component'
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [DishService,PromotionService,LeaderService,ProcessHttpmsgService,
     {provide: 'BaseURL', useValue: baseURL}
