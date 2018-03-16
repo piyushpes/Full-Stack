@@ -4,7 +4,7 @@
                        fxLayoutGap="10px"
                        fxLayoutAlign.gt-md="space-around start">
 
-                       <div fxFlex *ngIf="dish">
+                       <div fxFlex *ngIf="dish" [@expand]>
                          <md-card>
                            <md-card-header>
 
@@ -26,7 +26,7 @@
                         <h2>Error</h2>
                         <h4>{{errMess}}</h4>
                       </div>
-                       <div fxFlex *ngIf="promotion">
+                       <div fxFlex *ngIf="promotion" [@expand]>
                           <md-card>
                             <md-card-header>
                                 <div md-card-avatar></div>
@@ -46,7 +46,7 @@
                           <h2>Error</h2>
                           <h4>{{errMess}}</h4>
                         </div>
-                        <div fxFlex *ngIf="leader">
+                        <div fxFlex *ngIf="leader" [@expand]>
                             <md-card>
                               <md-card-header>
                                   <div md-card-avatar></div>

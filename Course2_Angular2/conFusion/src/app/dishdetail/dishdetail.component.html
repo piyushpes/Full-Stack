@@ -5,7 +5,7 @@
     fxLayoutGap="30px" 
     fxLayoutGap.xs="0">
 
-  <div fxFlex="40" *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility" [@expand]>
     <md-card > 
       <md-card-header>
         <md-card-title>
@@ -37,7 +37,7 @@
     <h2>Error</h2>
     <h4>{{dishErrMess}}</h4>
   </div>
-   <div fxFlex *ngIf="dish">
+   <div fxFlex *ngIf="dish" [@visibility]="visibility" [@expand]>
       <div fxLayout="column" fxLayoutGap="20px">
         <div fxFlex>
             <md-list>

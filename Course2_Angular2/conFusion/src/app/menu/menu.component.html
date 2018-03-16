@@ -12,7 +12,7 @@
      </div>
 
 <div fxFlex>
-  <md-grid-list cols="2" rowHeight="100px" *ngIf="dishes">
+  <md-grid-list cols="2" rowHeight="100px" *ngIf="dishes" [@expand]>
     <md-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetails',dish.id]" appHighlight>
       <img height="200px" src="{{BaseURL + dish.image}}" alt={{dish.name}}>
       <md-grid-tile-footer>
