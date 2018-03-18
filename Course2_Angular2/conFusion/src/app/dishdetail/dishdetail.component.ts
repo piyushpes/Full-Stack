@@ -32,6 +32,7 @@ export class DishdetailComponent implements OnInit {
   comment:Comment={rating:5,comment:'',author:'',date:''};
   dishErrMess:string;
   visibility = 'shown';
+  
 
   userCommentFormErrors={
     'author':'',

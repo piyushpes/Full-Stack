@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Feedback,ContactType} from '../shared/feedback';
-import { flyInOut,expand } from '../animations/app.animation';
+import { flyInOut,expand,displayInDOM } from '../animations/app.animation';
+import {FeedbackService} from '../services/feedback.service';
 
 
 @Component({
@@ -13,13 +14,17 @@ import { flyInOut,expand } from '../animations/app.animation';
     'style': 'display: block;'
     },
     animations: [
-      flyInOut(),expand()
+      flyInOut(),expand(),displayInDOM()
     ]
 })
 export class ContactComponent implements OnInit {
   feedbackForm:FormGroup;
   feedback:Feedback;
   contactTypes=ContactType;
+  hideStatus='displayed';
+  spiningVisibility='notdisplayed';
+  displayDataVisibility='notdisplayed';
+  postedFeedack:Feedback;
   formErrors = {
     'firstname': '',
     'lastname': '',
@@ -47,9 +52,9 @@ export class ContactComponent implements OnInit {
       'email':         'Email not in valid format.'
     },
   };
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder, private feedBackService:FeedbackService) { 
     this.createForm();
-
+    console.log(this.displayDataVisibility);
 
   }
 
@@ -90,6 +95,7 @@ onValueChanged(data?: any) {
 onSubmit():void{
 console.log("feedback form Submitted",this.feedbackForm.value);
 this.feedback=this.feedbackForm.value;
+this.hideStatus='notdisplayed';
 this.feedbackForm.reset({
   firstname:'',
     lastname:'',
@@ -99,6 +105,19 @@ this.feedbackForm.reset({
     contacttype:'None',
     message:''
 });
+this.spiningVisibility='displayed';
+
+
+this.feedBackService.submitFeedback(this.feedback).subscribe((fb)=>{
+  this.spiningVisibility='notdisplayed';
+  this.postedFeedack=fb;
+  this.displayDataVisibility='displayed';
+  setTimeout(()=>{this.displayDataVisibility='notdisplayed';this.postedFeedack=null;
+  this.hideStatus='displayed';},5000);
+
+
+}); // In the subscribe, this.spiningVisibility='notdisplayed';display the information and setTimeout after which hide the details and show the form  
+
 }
 
 }

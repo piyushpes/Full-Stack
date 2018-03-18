@@ -224,5 +224,156 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "firstname": "Piyush",
+      "lastname": "Jain",
+      "telnum": "8123799825",
+      "email": "piyushpes@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "Good.",
+      "id": 1
+    },
+    {
+      "firstname": "Jain",
+      "lastname": "Piyush",
+      "telnum": "812",
+      "email": "sww@dd",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "sss",
+      "id": 2
+    },
+    {
+      "firstname": "Piyush",
+      "lastname": "skjskj",
+      "telnum": "125",
+      "email": "kkk@gmai",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "jjj",
+      "id": 3
+    },
+    {
+      "firstname": "ojojoj",
+      "lastname": "ojoj",
+      "telnum": "7879",
+      "email": "popo@ww",
+      "agree": false,
+      "contacttype": "None",
+      "message": "ndi",
+      "id": 4
+    },
+    {
+      "firstname": "pppppppp",
+      "lastname": "mmmmm",
+      "telnum": "12345",
+      "email": "ww@ee",
+      "agree": false,
+      "contacttype": "None",
+      "message": "ssd",
+      "id": 5
+    },
+    {
+      "firstname": "kkkkk",
+      "lastname": "mmmm",
+      "telnum": "12346",
+      "email": "lkok@hh",
+      "agree": false,
+      "contacttype": "None",
+      "message": "kkk",
+      "id": 6
+    },
+    {
+      "firstname": "mmmmmmmmmmm",
+      "lastname": "qqqqqqqqqq",
+      "telnum": "123",
+      "email": "ppp@kkk",
+      "agree": false,
+      "contacttype": "None",
+      "message": "mmmm",
+      "id": 7
+    },
+    {
+      "firstname": "mmmmmmmm",
+      "lastname": "nnnnnnn",
+      "telnum": "1111111111",
+      "email": "lllll2wwdddd@ww",
+      "agree": false,
+      "contacttype": "None",
+      "message": "qqq",
+      "id": 8
+    },
+    {
+      "firstname": "mmmmmkl",
+      "lastname": "ooiiooi",
+      "telnum": "12354",
+      "email": "pi@gmail",
+      "agree": true,
+      "contacttype": "None",
+      "message": "qqqqq",
+      "id": 9
+    },
+    {
+      "firstname": "jjkkjcj",
+      "lastname": "doodj",
+      "telnum": "090080",
+      "email": "dd@dd",
+      "agree": false,
+      "contacttype": "None",
+      "message": "jekjofj",
+      "id": 10
+    },
+    {
+      "firstname": "dkjwj",
+      "lastname": "iijj",
+      "telnum": "98787",
+      "email": "ppp@uyuy",
+      "agree": false,
+      "contacttype": "None",
+      "message": "jkjj",
+      "id": 11
+    },
+    {
+      "firstname": "pppp",
+      "lastname": "uuyiy",
+      "telnum": "1235456",
+      "email": "piyus@hhh",
+      "agree": false,
+      "contacttype": "None",
+      "message": "nnn",
+      "id": 12
+    },
+    {
+      "firstname": "jojojo",
+      "lastname": "jojojoj",
+      "telnum": "12345",
+      "email": "ppp@ghh",
+      "agree": false,
+      "contacttype": "None",
+      "message": "hjhkh",
+      "id": 13
+    },
+    {
+      "firstname": "oJOJojs",
+      "lastname": "ojdowjo",
+      "telnum": "3212",
+      "email": "pkpk@kkp",
+      "agree": false,
+      "contacttype": "None",
+      "message": "dkwk",
+      "id": 14
+    },
+    {
+      "firstname": "jjdj",
+      "lastname": "jqjo",
+      "telnum": "987978",
+      "email": "jhj@hkjhk",
+      "agree": false,
+      "contacttype": "None",
+      "message": "kjlkjlj",
+      "id": 15
+    }
+  ]
 }

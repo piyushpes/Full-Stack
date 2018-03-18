@@ -11,6 +11,7 @@ import { RestangularModule, Restangular } from 'ngx-restangular';
 import { RestangularConfigFactory } from './shared/restConfig';
 
 import {DishService} from './services/dish.service';
+import {FeedbackService} from './services/feedback.service';
 import {PromotionService} from './services/promotion.service';
 import {LeaderService} from './services/leader.service';
 import { baseURL } from './shared/baseurl';
@@ -52,7 +53,7 @@ import { HighlightDirective } from './directives/highlight.directive'
     HttpModule,
     RestangularModule.forRoot(RestangularConfigFactory)
   ],
-  providers: [DishService,PromotionService,LeaderService,ProcessHttpmsgService,
+  providers: [DishService,PromotionService,LeaderService,ProcessHttpmsgService,FeedbackService,
     {provide: 'BaseURL', useValue: baseURL}
   ],
   entryComponents:[LoginComponent],

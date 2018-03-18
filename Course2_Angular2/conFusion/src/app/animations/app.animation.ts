@@ -4,13 +4,27 @@ export function visibility() {
     return trigger('visibility', [
         state('shown', style({
             transform: 'scale(1.0)',
-            opacity: 1
+            opacity: 1,
         })),
         state('hidden', style({
             transform: 'scale(0.5)',
             opacity: 0
         })),
         transition('* => *', animate('0.5s ease-in-out'))
+    ]);
+}
+
+export function displayInDOM() {
+    return trigger('displayInDOM', [
+        state('displayed', style({
+            transform: 'scale(1.0)',
+            display: 'block'
+        })),
+        state('notdisplayed', style({
+            transform: 'scale(1.0)',
+            display: 'none'
+        })),
+        transition('* => *', animate('0s'))
     ]);
 }
 

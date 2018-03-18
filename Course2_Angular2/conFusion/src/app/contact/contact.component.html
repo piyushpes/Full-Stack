@@ -36,7 +36,7 @@
   <div fxFlex>
   <h3>Feedback Form</h3>
 
-   <form fxLayout="column" fxLayoutGap="10px" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" novalidate>
+   <form fxLayout="column" fxLayoutGap="10px" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" novalidate [@displayInDOM]="hideStatus" [@expand]>
 
     <div fxFlex >
         <div fxLayout.gt-sm="row" fxLayoutGap="10px" fxLayout="column">
@@ -98,7 +98,25 @@
 
    </form>
 
+   <div [@displayInDOM]="spiningVisibility" [@expand]>
+      
+      <h3>Submitting Form</h3>
+      <md-spinner></md-spinner>
+    </div>
+    
+    <div *ngIf="postedFeedack" [@displayInDOM]='displayDataVisibility' [@expand]>
+     <h3>Your Submission</h3>
+     <p>First Name: {{postedFeedack.firstname}}</p>
+     <p>Last Name: {{postedFeedack.lastname}}</p>
+     <p>Tel. Number: {{postedFeedack.telnum}}</p>
+     <p>Email: {{postedFeedack.email}}</p>
+     <p>Contact You?: {{postedFeedack.agree}}</p>
+     <p>How?: {{postedFeedack.contacttype}}</p>
+     <p>Feedback: {{postedFeedack.message}}</p>
+   
+   </div>
   </div>
+
   
 
 </div>
